@@ -1,5 +1,6 @@
 {
   "name": "@nasa-gcn/rcfiles",
+  "version": "0.0.0",
   "description": "Shared ESLint, Prettier, and lint-staged configs for https://gcn.nasa.gov projects",
   "repository": {
     "type": "git",
