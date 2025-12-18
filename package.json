@@ -1,0 +1,29 @@
+{
+  "name": "@nasa-gcn/rcfiles",
+  "description": "Shared ESLint, Prettier, and lint-staged configs for https://gcn.nasa.gov projects",
+  "repository": {
+    "type": "git",
+    "url": "github:nasa-gcn/rcfiles"
+  },
+  "license": "Apache-2.0",
+  "type": "module",
+  "scripts": {
+    "prepare": "husky"
+  },
+  "files": [
+    "eslint.config.js",
+    "prettier.config.js",
+    "lint-staged.config.js"
+  ],
+  "dependencies": {
+    "@nasa-gcn/eslint-config-gitignore": "^1.0.0",
+    "@trivago/prettier-plugin-sort-imports": "^6.0.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-jest": "^29.5.0",
+    "typescript-eslint": "^8.50.0"
+  },
+  "devDependencies": {
+    "husky": "^9.1.7",
+    "lint-staged": "^16.2.7"
+  }
+}
