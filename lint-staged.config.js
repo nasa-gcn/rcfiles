@@ -5,20 +5,14 @@ import prettier from 'prettier'
 async function eslintRemoveIgnoredFiles(files) {
   const eslint = new ESLint()
   const isIgnored = await Promise.all(
-    files.map((file) => {
-      return eslint.isPathIgnored(file)
-    })
+    files.map((file) => eslint.isPathIgnored(file))
   )
-  const filteredFiles = files.filter((_, i) => !isIgnored[i])
-  return filteredFiles.join(' ')
+  return files.filter((_, i) => !isIgnored[i])
 }
 
 // Adapted from https://github.com/okonet/lint-staged#how-can-i-ignore-files-from-eslintignore
 function prettierRemoveIgnoredFiles(files) {
-  const filteredFiles = files.filter(
-    (file) => !prettier.getFileInfo(file).isIgnored
-  )
-  return filteredFiles.join(' ')
+  return files.filter((file) => !prettier.getFileInfo(file).isIgnored)
 }
 
 export default {
@@ -27,7 +21,7 @@ export default {
   '*.{cjs,mjs,js,jsx,ts,tsx}': async (files) => {
     const filteredFiles = await eslintRemoveIgnoredFiles(files)
     if (!files) return []
-    return `eslint --cache --fix --max-warnings 0 ${filteredFiles}`
+    return `eslint --cache --fix --max-warnings 0 ${filteredFiles.join(' ')}`
   },
   '*.{ts,tsx}': () => 'tsc -p .',
   '*.{css,scss,cjs,mjs,js,json,jsx,md,mdx,ts,tsx,yml,yaml,md}': async (
@@ -35,6 +29,6 @@ export default {
   ) => {
     const filteredFiles = prettierRemoveIgnoredFiles(files)
     if (!files) return []
-    return `prettier --write ${filteredFiles}`
+    return `prettier --write ${filteredFiles.join(' ')}`
   },
 }
