@@ -26,7 +26,6 @@ export default defineConfig(
   { files: ['*.ts'], extends: [tseslint.configs.recommended] },
   {
     files: ['test.ts'],
-    plugins: ['jest'],
     extends: [pluginJest.configs['flat/recommended']],
   }
 )
