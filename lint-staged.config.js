@@ -15,6 +15,7 @@ function prettierRemoveIgnoredFiles(files) {
   return files.filter((file) => !prettier.getFileInfo(file).isIgnored)
 }
 
+/** @type {import("lint-staged").Configuration} */
 export default {
   // Note, this rule should include *.mdx, but mdx linting is broken.
   // See https://github.com/mdx-js/eslint-mdx/issues/367.
