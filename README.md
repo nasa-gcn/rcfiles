@@ -1,3 +1,5 @@
+[![NPM Version](https://img.shields.io/npm/v/%40nasa-gcn%2Frcfiles)](https://www.npmjs.com/package/@nasa-gcn/rcfiles)
+
 # @nasa-gcn/rcfiles
 
 This package provides shared ESLint, Prettier, and lint-staged configs for https://gcn.nasa.gov projects.
