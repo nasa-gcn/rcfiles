@@ -25,7 +25,12 @@ export default defineConfig(
   },
   { files: ['*.ts'], extends: [tseslint.configs.recommended] },
   {
-    files: ['test.ts'],
+    files: [
+      'test.[jt]s?(x)',
+      '**/__tests__/**/*.[jt]s?(x)',
+      '**/__mocks__/*.[jt]s?(x)',
+      '**/?(*.)+(spec|test).[jt]s?(x)',
+    ],
     extends: [pluginJest.configs['flat/recommended']],
   }
 )
