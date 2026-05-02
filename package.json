@@ -4,7 +4,7 @@
   "description": "Shared ESLint, Prettier, and lint-staged configs for https://gcn.nasa.gov projects",
   "repository": {
     "type": "git",
-    "url": "github:nasa-gcn/rcfiles"
+    "url": "git+https://github.com/nasa-gcn/rcfiles.git"
   },
   "license": "Apache-2.0",
   "type": "module",
